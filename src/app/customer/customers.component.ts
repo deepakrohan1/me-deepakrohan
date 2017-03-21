@@ -1,19 +1,23 @@
 import { Component, OnInit } from '@angular/core';
 import {CustomerComponent} from './customer.component';
+import { CustomerService } from './customer.service';
 
 
 @Component({
-    moduleId: __moduleName,
+    moduleId: module.id,
     selector: 'app-customers',
     templateUrl: 'customers.component.html',
+    providers:[CustomerService]
 
 })
 export class CustomersComponent implements OnInit {
-    customers = [
-      {id: '1', name: 'deepakrohan'},
-      {id: '2', name: 'shiva'}
-  ];
-    constructor() { }
-
-    ngOnInit() { }
+    customers: any[];
+    private _customerService: CustomerService;
+    constructor(customerService: CustomerService) { 
+        this._customerService = customerService;
+    }
+// Why not construcot ngOnInit will be called on RunTime so we use
+    ngOnInit() { 
+        this.customers = this._customerService.getCustomers();
+    }
 }

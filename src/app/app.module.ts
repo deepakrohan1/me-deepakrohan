@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import {CustomerComponent} from './customer/customer.component';
 import {CustomersComponent} from './customer/customers.component';
+import { CustomerService } from './customer/customer.service';
 
 import { AppComponent } from './app.component';
 
