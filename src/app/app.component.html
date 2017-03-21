@@ -1,3 +1,8 @@
-<h1>
-  {{title}}
-</h1>
+<h1>  {{title}} </h1>
+  <div [style.color] = "wardsColor">
+    {{name}}
+  </div>
+  <button (click)="changeColor()">Change</button>
+  <input type="text" [(ngModel)]="name" />
+<app-customers> </app-customers>
+
